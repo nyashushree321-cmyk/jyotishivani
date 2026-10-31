@@ -533,6 +533,10 @@
     .clients {
         width: 380px;
     }
+    .hero-text h1 {
+        font-size: 30px;
+        font-weight: 700;
+    }
     .hero-text h2 {
         line-height: 56px;
         font-size: 44px;
@@ -567,6 +571,7 @@
     .hero-section.two {
         padding-top: 160px;
     }
+    
     .hero-text p {
         font-size: 18px;
         line-height: 28px;
