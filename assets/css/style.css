@@ -1330,12 +1330,24 @@ footer {
 ul.chek li {
     padding-bottom: 12px;
     font-size: 18px;
+    display: flex;
+    align-items: flex-start;
+}
+
+ul.chek li i {
+    margin-right: 12px;
+    color: #ffb703;
+    font-size: 19px;
+    flex-shrink: 0;
+    margin-top: 4px;
 }
 
 ul.chek li img {
     margin-right: 12px;
     width: auto;
     height: auto;
+    flex-shrink: 0;
+    margin-top: 4px;
 }
 
 .how-do-stap {
@@ -2960,8 +2972,30 @@ footer ul.shaps-img li:nth-child(3) {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
+}
+
+.store-badge-icon i {
+    font-size: 26px;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.store-badge-google .store-badge-icon i.fa-google-play {
+    color: #00d2ff;
+    background: -webkit-linear-gradient(45deg, #00A0FF 0%, #00E676 35%, #FFE000 70%, #FF3A44 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 5px rgba(0, 210, 255, 0.35));
+}
+
+.store-badge-apple .store-badge-icon i.fa-apple {
+    color: #ffffff;
+    font-size: 28px;
+    line-height: 1;
 }
 
 .store-svg {
