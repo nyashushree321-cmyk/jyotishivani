@@ -753,8 +753,14 @@ form#contact-form h3 {
 
 /* 07. shaps-img */
 
+ul.shaps-img {
+    pointer-events: none !important;
+}
+
 ul.shaps-img li {
     position: absolute;
+    pointer-events: none !important;
+    z-index: 0 !important;
 }
 
 ul.shaps-img li:nth-child(1) {
@@ -1812,17 +1818,16 @@ ul.icon-share {
 }
 
 .pricing-plans-text i {
-    width: 74px;
-    height: 90px;
+    width: 60px;
+    height: 60px;
     display: flex;
-    border-radius: 30%;
+    border-radius: 50%;
     background-color: var(--bgcolor);
     align-items: center;
     justify-content: center;
-    position: absolute;
-    right: 5%;
-    top: -20%;
-    font-size: 40px;
+    color: #fff;
+    position: static;
+    font-size: 26px;
 }
 
 .pricing-plans-text:hover i {
@@ -1875,7 +1880,7 @@ ul.icon-share {
 }
 
 .pricing:hover {
-    background-color: var(--bgcolor);
+    background-color: transparent;
 }
 
 .pricing:hover ul.chek li img {
@@ -2834,8 +2839,8 @@ footer ul.shaps-img li:nth-child(3) {
 }
 
 .store-badge-apple:hover {
-    border-color: rgba(255, 255, 255, 0.5);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), 0 0 22px rgba(255, 255, 255, 0.18);
+    border-color: rgba(13, 132, 248, 0.7);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), 0 0 22px rgba(13, 132, 248, 0.35);
 }
 
 .store-badge-icon {
@@ -4054,3 +4059,632 @@ footer a,
       row-gap: 15px;
     }
   }
+
+/* ==========================================================================
+   UNIVERSAL OVERLAP & STRUCTURAL FIXES
+   ========================================================================== */
+ul.shaps-img {
+    pointer-events: none !important;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 1 !important;
+    overflow: hidden;
+}
+
+ul.shaps-img li {
+    pointer-events: none !important;
+    z-index: 1 !important;
+}
+
+ul.shaps-img li img {
+    pointer-events: none !important;
+    user-select: none;
+    max-width: none;
+}
+
+/* Ensure containers and interactive content stay above background shapes */
+.hero-section .container,
+#pricing .container,
+#about .container,
+#services .container,
+#app-screens .container,
+.section-client .container,
+.clients-section .container,
+.accordion-section .container,
+footer .container {
+    position: relative;
+    z-index: 3;
+}
+
+/* Fix section vertical flow & spacing */
+#pricing {
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 70px;
+    margin-top: -30px;
+    z-index: 5;
+}
+
+#about {
+    position: relative;
+    padding: 90px 0 80px 0;
+    background: #ffffff;
+}
+
+#services {
+    position: relative;
+    padding: 90px 0 80px 0;
+    background-color: #f7f7fa;
+}
+
+#app-screens {
+    position: relative;
+    padding: 90px 0 80px 0;
+    background-color: #ffffff;
+}
+
+.section-client {
+    position: relative;
+    padding: 60px 0 70px 0;
+}
+
+.clients-section {
+    position: relative;
+    margin-top: 20px;
+}
+
+/* Make sure marquee fade overlays don't block interaction */
+.marquee-two:before,
+.marquee-two:after,
+.marquee-three:before,
+.marquee-three:after,
+.marquee:before,
+.marquee:after {
+    pointer-events: none !important;
+}
+
+/* ==========================================================================
+   UPGRADED PRICING & QUICK CONSULTATION SECTION
+   ========================================================================== */
+.pricing-section-wrap {
+    position: relative;
+    z-index: 4;
+}
+
+.pricing-header-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(241, 122, 24, 0.1);
+    color: #e06307;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 30px;
+    border: 1px solid rgba(241, 122, 24, 0.25);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 24px;
+}
+
+.pricing-card-link {
+    text-decoration: none !important;
+    display: block;
+    height: 100%;
+}
+
+.consult-card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 24px 22px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+    border: 1.5px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.consult-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Card 1: Chat (Pink/Rose Theme) */
+.consult-card-chat {
+    background: linear-gradient(180deg, #fff9fb 0%, #ffffff 100%);
+    border-color: rgba(255, 107, 129, 0.25);
+}
+.consult-card-chat:hover {
+    box-shadow: 0 18px 40px rgba(255, 107, 129, 0.18);
+    border-color: rgba(255, 107, 129, 0.5);
+}
+.consult-card-chat .consult-icon-box {
+    background: linear-gradient(135deg, #ff6b81 0%, #ff4757 100%);
+    box-shadow: 0 8px 20px rgba(255, 71, 87, 0.3);
+}
+
+/* Card 2: Call (Navy / Gold Theme - Hot/Popular) */
+.consult-card-call {
+    background: linear-gradient(145deg, #021a36 0%, #06284f 100%);
+    border-color: rgba(241, 122, 24, 0.4);
+    color: #ffffff;
+}
+.consult-card-call:hover {
+    box-shadow: 0 20px 45px rgba(2, 26, 54, 0.45);
+    border-color: #f17a18;
+}
+.consult-card-call .consult-icon-box {
+    background: linear-gradient(135deg, #f17a18 0%, #e06307 100%);
+    box-shadow: 0 8px 22px rgba(241, 122, 24, 0.45);
+}
+.consult-card-call .consult-title {
+    color: #ffffff !important;
+}
+.consult-card-call .consult-desc {
+    color: #cbd5e1 !important;
+}
+.consult-card-call .consult-price-current {
+    color: #ffffff !important;
+}
+.consult-card-call .consult-price-old {
+    color: #94a3b8 !important;
+}
+.consult-card-call .consult-btn {
+    background: linear-gradient(135deg, #f17a18 0%, #ff8929 100%);
+    color: #ffffff !important;
+    border: none;
+}
+
+/* Card 3: Astromall (Green / Emerald Theme) */
+.consult-card-mall {
+    background: linear-gradient(180deg, #f7fdfa 0%, #ffffff 100%);
+    border-color: rgba(16, 185, 129, 0.25);
+}
+.consult-card-mall:hover {
+    box-shadow: 0 18px 40px rgba(16, 185, 129, 0.18);
+    border-color: rgba(16, 185, 129, 0.5);
+}
+.consult-card-mall .consult-icon-box {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+}
+
+/* Card 4: Pooja (Amber / Saffron Theme) */
+.consult-card-pooja {
+    background: linear-gradient(180deg, #fffcf5 0%, #ffffff 100%);
+    border-color: rgba(245, 158, 11, 0.25);
+}
+.consult-card-pooja:hover {
+    box-shadow: 0 18px 40px rgba(245, 158, 11, 0.18);
+    border-color: rgba(245, 158, 11, 0.5);
+}
+.consult-card-pooja .consult-icon-box {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);
+}
+
+/* Card internals */
+.consult-top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.consult-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    padding: 4px 9px;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.05);
+    color: #475569;
+}
+
+.bg-white-10 {
+    background: rgba(255, 255, 255, 0.12) !important;
+}
+
+.consult-badge-offer {
+    background: #ecfdf5;
+    color: #047857;
+    border: 1px solid #a7f3d0;
+}
+
+.consult-badge-hot {
+    background: #ff4757;
+    color: #ffffff;
+    box-shadow: 0 3px 8px rgba(255, 71, 87, 0.4);
+    animation: hotPulse 2s infinite ease-in-out;
+}
+
+@keyframes hotPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.consult-badge-cert {
+    background: #f0fdf4;
+    color: #15803d;
+    border: 1px solid #bbf7d0;
+}
+
+.consult-badge-live {
+    background: #fff7ed;
+    color: #c2410c;
+    border: 1px solid #fed7aa;
+}
+
+.consult-icon-box {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 24px;
+    margin-bottom: 14px;
+    transition: transform 0.3s ease;
+}
+
+.consult-card:hover .consult-icon-box {
+    transform: scale(1.08) rotate(-4deg);
+}
+
+.consult-title {
+    font-size: 18.5px;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0 0 6px 0;
+    letter-spacing: -0.2px;
+}
+
+.consult-desc {
+    font-size: 13px;
+    line-height: 19px;
+    color: #64748b;
+    margin: 0 0 16px 0;
+    min-height: 38px;
+}
+
+.consult-price-wrap {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding-top: 12px;
+    margin-top: auto;
+    border-top: 1px dashed rgba(0, 0, 0, 0.08);
+    margin-bottom: 14px;
+}
+
+.consult-card-call .consult-price-wrap {
+    border-top-color: rgba(255, 255, 255, 0.12);
+}
+
+.consult-price-current {
+    font-size: 18px;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.consult-price-current small {
+    font-size: 12px;
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+.consult-price-old {
+    font-size: 13px;
+    color: #94a3b8;
+    text-decoration: line-through;
+}
+
+.consult-rate-chip {
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 12px;
+    background: #ecfdf5;
+    color: #059669;
+    margin-left: auto;
+}
+
+.consult-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 10px 16px;
+    border-radius: 12px;
+    font-size: 13.5px;
+    font-weight: 700;
+    text-align: center;
+    background: #f8fafc;
+    color: #1e293b;
+    border: 1px solid #e2e8f0;
+    transition: all 0.25s ease;
+}
+
+.consult-btn i {
+    font-size: 12px;
+    transition: transform 0.25s ease;
+}
+
+.consult-card:hover .consult-btn {
+    background: #f17a18;
+    color: #ffffff !important;
+    border-color: #f17a18;
+    box-shadow: 0 6px 16px rgba(241, 122, 24, 0.3);
+}
+
+.consult-card:hover .consult-btn i {
+    transform: translateX(4px);
+}
+
+/* ==========================================================================
+   UPGRADED SERVICES SECTION (#about)
+   ========================================================================== */
+.services-header {
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 50px auto;
+}
+
+.services-badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #fff4ec;
+    color: #e06307;
+    font-size: 12.5px;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 30px;
+    border: 1px solid rgba(241, 122, 24, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 14px;
+}
+
+.services-header h2 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #181824;
+    margin-bottom: 14px;
+    letter-spacing: -0.5px;
+}
+
+.services-header p {
+    font-size: 16px;
+    line-height: 26px;
+    color: #555e6d;
+    margin: 0;
+}
+
+.service-grid-card {
+    background: #ffffff;
+    border: 1.5px solid #edf0f5;
+    border-radius: 20px;
+    padding: 28px 24px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-grid-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #f17a18, #ff9f43);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.service-grid-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(241, 122, 24, 0.35);
+    box-shadow: 0 16px 36px rgba(55, 47, 71, 0.1);
+}
+
+.service-grid-card:hover::after {
+    opacity: 1;
+}
+
+.service-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.service-card-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    color: #ffffff;
+    flex-shrink: 0;
+    transition: transform 0.35s ease;
+}
+
+.service-grid-card:hover .service-card-icon {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.service-icon-kundli {
+    background: linear-gradient(135deg, #f17a18 0%, #ff9f43 100%);
+    box-shadow: 0 8px 20px rgba(241, 122, 24, 0.3);
+}
+
+.service-icon-milan {
+    background: linear-gradient(135deg, #e11d48 0%, #fb7185 100%);
+    box-shadow: 0 8px 20px rgba(225, 29, 72, 0.3);
+}
+
+.service-icon-horoscope {
+    background: linear-gradient(135deg, #d97706 0%, #fbbf24 100%);
+    box-shadow: 0 8px 20px rgba(217, 119, 6, 0.3);
+}
+
+.service-icon-career {
+    background: linear-gradient(135deg, #0284c7 0%, #38bdf8 100%);
+    box-shadow: 0 8px 20px rgba(2, 132, 199, 0.3);
+}
+
+.service-icon-love {
+    background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);
+    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3);
+}
+
+.service-icon-panchang {
+    background: linear-gradient(135deg, #0d9488 0%, #2dd4bf 100%);
+    box-shadow: 0 8px 20px rgba(13, 148, 136, 0.3);
+}
+
+.service-card-badge {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: #f1f5f9;
+    color: #475569;
+}
+
+.service-grid-card h3 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0 0 10px 0;
+    letter-spacing: -0.3px;
+}
+
+.service-grid-card p {
+    font-size: 14.5px;
+    line-height: 23px;
+    color: #64748b;
+    margin: 0 0 20px 0;
+}
+
+.service-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #f17a18;
+    text-decoration: none !important;
+    margin-top: auto;
+    transition: gap 0.25s ease, color 0.25s ease;
+}
+
+.service-card-link i {
+    font-size: 12px;
+    transition: transform 0.25s ease;
+}
+
+.service-grid-card:hover .service-card-link {
+    color: #e06307;
+}
+
+.service-grid-card:hover .service-card-link i {
+    transform: translateX(4px);
+}
+
+/* ==========================================================================
+   UPGRADED HOW IT WORKS & LIVE SESSIONS SECTION (#services)
+   ========================================================================== */
+.hiw-step-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 24px 20px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hiw-step-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.hiw-step-num {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #f17a18 0%, #ff9f43 100%);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 800;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(241, 122, 24, 0.35);
+}
+
+.hiw-step-content h4 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 4px 0;
+}
+
+.hiw-step-content p {
+    font-size: 13.5px;
+    line-height: 20px;
+    color: #64748b;
+    margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    #pricing {
+        margin-top: 0;
+        padding-bottom: 50px;
+    }
+    .consult-desc {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 575px) {
+    .consult-card {
+        padding: 20px 16px;
+    }
+    .services-header h2 {
+        font-size: 28px;
+    }
+}
+
