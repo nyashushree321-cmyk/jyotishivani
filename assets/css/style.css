@@ -1028,108 +1028,202 @@ footer {
     font-size: 18px;
 }
 
-
-
-/* Hiring Section */
+/* 10. Hiring Section */
 .hiring-section {
+  padding: 70px 20px;
   background: linear-gradient(
     135deg,
-    #96a0e2,
-    #bb5f2a,
-    #f06d15
+    #fffaf0,
+    #fff1d9,
+    #ffffff
   );
-  padding: 80px 20px;
-  text-align: center;
-  color: #ffffff;
+  overflow: hidden;
 }
 
-/* Content Container */
+.hiring-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+}
+
 .hiring-content {
-  max-width: 800px;
-  margin: 0 auto;
+  flex: 1;
+  text-align: center;
 }
 
-/* Small Heading */
-.hiring-tag {
-  color: #f5d58a;
-  font-size: 13px;
-  font-weight: bold;
-  letter-spacing: 3px;
-  margin-bottom: 15px;
+.brand-name {
+  color: #e65b13;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 2px;
 }
 
-/* Main Heading */
 .hiring-content h2 {
-  font-size: 38px;
-  color: #f5d58a;
-  margin-bottom: 20px;
+  color: #102b48;
+  font-size: 42px;
+  margin: 25px 0 0;
+  font-weight: 800;
 }
 
-/* Description */
+.hiring-content h1 {
+  font-size: clamp(65px, 9vw, 100px);
+  font-weight: 900;
+  line-height: 1;
+  margin: 0;
+  background: linear-gradient(
+    90deg,
+    #e42e12,
+    #ff9c00
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hiring-label {
+  background: #063c5a;
+  color: #fff;
+  padding: 12px 25px;
+  border: 3px solid #f5a623;
+  border-radius: 40px;
+  font-size: 27px;
+  font-weight: 800;
+  display: inline-block;
+  margin-top: 15px;
+}
+
 .hiring-description {
   font-size: 17px;
   line-height: 1.8;
-  color: #e0e2ef;
-  margin-bottom: 30px;
+  color: #26364a;
+  margin: 25px 0;
 }
 
-/* Benefits */
 .hiring-benefits {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin-bottom: 25px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 35px 0;
 }
 
 .benefit {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(245, 213, 138, 0.35);
-  padding: 12px 18px;
-  border-radius: 8px;
-  font-size: 14px;
+  text-align: center;
+  border-right: 1px solid #e5b66b;
+}
+
+.benefit:last-child {
+  border: none;
 }
 
 .benefit span {
-  color: #f5d58a;
-  margin-right: 6px;
-}
-
-/* Final Text */
-.hiring-note {
-  color: #c7c9d8;
-  font-size: 15px;
-  line-height: 1.8;
-  margin-bottom: 30px;
-}
-
-/* Apply Button */
-.apply-btn {
-  display: inline-block;
-  background-color: #f5d58a;
-  color: #17182a;
-  padding: 14px 32px;
-  text-decoration: none;
-  font-size: 16px;
+  width: 75px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    #ff9b00,
+    #e74b16
+  );
+  color: white;
+  font-size: 30px;
   font-weight: bold;
-  border-radius: 6px;
-  transition: transform 0.3s ease,
-              background-color 0.3s ease;
 }
 
-.apply-btn:hover {
-  background-color: #ffe6a6;
-  transform: translateY(-3px);
+.benefit:nth-child(2) span {
+  background: #20a7ce;
 }
 
-/* Mobile Responsive */
-@media (max-width: 600px) {
+.benefit:nth-child(3) span {
+  background: #d73579;
+}
+
+.benefit:nth-child(4) span {
+  background: #26966c;
+}
+
+.benefit h4 {
+  font-size: 14px;
+  color: #102b48;
+  margin-top: 12px;
+  line-height: 1.4;
+}
+
+.join-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 16px 35px;
+  border-radius: 50px;
+  background: linear-gradient(
+    90deg,
+    #ed3e0b,
+    #ff9900
+  );
+  color: #fff;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 800;
+  box-shadow: 0 5px 15px rgba(220, 80, 10, 0.25);
+  transition: 0.3s ease;
+}
+
+.join-btn:hover {
+  transform: translateY(-4px);
+  color: white;
+  box-shadow: 0 8px 20px rgba(220, 80, 10, 0.35);
+}
+
+.join-btn span {
+  background: white;
+  color: #ed3e0b;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hiring-image {
+  flex: 1;
+}
+
+.hiring-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 15px;
+}
+
+/* Mobile responsive */
+
+@media (max-width: 768px) {
+
   .hiring-section {
-    padding: 55px 18px;
+    padding: 40px 15px;
+  }
+
+  .hiring-container {
+    flex-direction: column;
   }
 
   .hiring-content h2 {
-    font-size: 28px;
+    font-size: 30px;
+  }
+
+  .hiring-content h1 {
+    font-size: 65px;
+  }
+
+  .hiring-label {
+    font-size: 20px;
   }
 
   .hiring-description {
@@ -1137,8 +1231,26 @@ footer {
   }
 
   .hiring-benefits {
-    flex-direction: column;
-    align-items: stretch;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 25px;
+  }
+
+  .benefit:nth-child(2) {
+    border-right: none;
+  }
+
+  .benefit span {
+    width: 65px;
+    height: 65px;
+  }
+
+  .join-btn {
+    font-size: 17px;
+    padding: 13px 25px;
+  }
+
+  .hiring-image {
+    width: 100%;
   }
 }
 
