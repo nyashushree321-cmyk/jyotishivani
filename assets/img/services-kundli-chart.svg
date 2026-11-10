@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" opacity="0.25">
+  <defs>
+    <radialGradient id="sapphGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.5"/>
+      <stop offset="60%" stop-color="#0284c7" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0369a1" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Planetary Orbit Circles -->
+  <circle cx="400" cy="400" r="390" fill="none" stroke="rgba(56, 189, 248, 0.4)" stroke-width="1.2" stroke-dasharray="4,8"/>
+  <circle cx="400" cy="400" r="360" fill="none" stroke="rgba(56, 189, 248, 0.6)" stroke-width="2"/>
+  <circle cx="400" cy="400" r="330" fill="none" stroke="rgba(253, 224, 71, 0.4)" stroke-width="1" stroke-dasharray="2,6"/>
+  <circle cx="400" cy="400" r="300" fill="url(#sapphGlow)"/>
+
+  <!-- Classical North Indian Vedic Janam Kundli 12-House Diamond Geometry -->
+  <g fill="none" stroke="#38bdf8" stroke-width="2">
+    <!-- Outer Square -->
+    <rect x="150" y="150" width="500" height="500" stroke-width="2.5"/>
+    <!-- Diagonal X through the chart -->
+    <line x1="150" y1="150" x2="650" y2="650"/>
+    <line x1="650" y1="150" x2="150" y2="650"/>
+    <!-- Inner Diamond (Lagna & Kendra Houses) -->
+    <polygon points="400,150 650,400 400,650 150,400" stroke="#fde047" stroke-width="2.5"/>
+    <!-- Central Rhombus Cross -->
+    <line x1="400" y1="150" x2="400" y2="650" stroke-dasharray="4,6"/>
+    <line x1="150" y1="400" x2="650" y2="400" stroke-dasharray="4,6"/>
+  </g>
+
+  <!-- 12 Bhavas (Astrological Houses) Sacred Sanskrit Marker Nodes -->
+  <g fill="#ffd166">
+    <!-- 1st House (Lagna / Tanu Bhava) -->
+    <circle cx="400" cy="275" r="5"/>
+    <!-- 2nd House (Dhana Bhava) -->
+    <circle cx="275" cy="210" r="4"/>
+    <!-- 3rd House (Sahaja Bhava) -->
+    <circle cx="210" cy="275" r="4"/>
+    <!-- 4th House (Sukha Bhava) -->
+    <circle cx="275" cy="400" r="5"/>
+    <!-- 5th House (Putra Bhava) -->
+    <circle cx="210" cy="525" r="4"/>
+    <!-- 6th House (Ari / Roga Bhava) -->
+    <circle cx="275" cy="590" r="4"/>
+    <!-- 7th House (Kalatra / Marriage Bhava) -->
+    <circle cx="400" cy="525" r="5"/>
+    <!-- 8th House (Ayu / Longevity Bhava) -->
+    <circle cx="525" cy="590" r="4"/>
+    <!-- 9th House (Bhagya / Fortune Bhava) -->
+    <circle cx="590" cy="525" r="4"/>
+    <!-- 10th House (Karma / Career Bhava) -->
+    <circle cx="525" cy="400" r="5"/>
+    <!-- 11th House (Labha / Gains Bhava) -->
+    <circle cx="590" cy="275" r="4"/>
+    <!-- 12th House (Vyaya Bhava) -->
+    <circle cx="525" cy="210" r="4"/>
+  </g>
+
+  <!-- Planetary Orbit Ray Intersections -->
+  <g stroke="rgba(253, 224, 71, 0.4)" stroke-width="1.2" stroke-dasharray="2,5">
+    <line x1="400" y1="40" x2="400" y2="760"/>
+    <line x1="40" y1="400" x2="760" y2="400"/>
+    <line x1="145" y1="145" x2="655" y2="655"/>
+    <line x1="655" y1="145" x2="145" y2="655"/>
+  </g>
+</svg>
+

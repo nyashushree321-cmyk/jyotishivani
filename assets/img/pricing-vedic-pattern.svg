@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" opacity="0.22">
+  <defs>
+    <radialGradient id="ambGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff9f1c" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#ff9f1c" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Sacred Geometry Repeating Motif -->
+  <g fill="none" stroke="#ff9f1c" stroke-width="1.2">
+    <!-- Center Mandala Flower -->
+    <circle cx="200" cy="200" r="120" stroke-dasharray="4,6"/>
+    <circle cx="200" cy="200" r="80"/>
+    <circle cx="200" cy="200" r="40" stroke-width="1.8"/>
+    
+    <!-- 8 Overlapping Lotus Petals -->
+    <path d="M200,80 Q260,140 200,200 Q140,140 200,80"/>
+    <path d="M200,320 Q260,260 200,200 Q140,260 200,320"/>
+    <path d="M80,200 Q140,260 200,200 Q140,140 80,200"/>
+    <path d="M320,200 Q260,260 200,200 Q260,140 320,200"/>
+
+    <path d="M115,115 Q185,155 200,200 Q155,185 115,115"/>
+    <path d="M285,285 Q215,245 200,200 Q245,215 285,285"/>
+    <path d="M115,285 Q185,245 200,200 Q155,215 115,285"/>
+    <path d="M285,115 Q215,155 200,200 Q245,185 285,115"/>
+
+    <!-- Concentric Diamond Lattice -->
+    <polygon points="200,30 370,200 200,370 30,200"/>
+    <polygon points="200,55 345,200 200,345 55,200" stroke-dasharray="3,5"/>
+
+    <!-- Corner Sacred Motifs -->
+    <circle cx="0" cy="0" r="80"/>
+    <circle cx="400" cy="0" r="80"/>
+    <circle cx="0" cy="400" r="80"/>
+    <circle cx="400" cy="400" r="80"/>
+  </g>
+
+  <!-- Glowing Focal Nodes -->
+  <circle cx="200" cy="200" r="6" fill="#ffd166"/>
+  <circle cx="200" cy="200" r="24" fill="url(#ambGlow)"/>
+  <circle cx="200" cy="30" r="4" fill="#ffd166"/>
+  <circle cx="370" cy="200" r="4" fill="#ffd166"/>
+  <circle cx="200" cy="370" r="4" fill="#ffd166"/>
+  <circle cx="30" cy="200" r="4" fill="#ffd166"/>
+</svg>
+

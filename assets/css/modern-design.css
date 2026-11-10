@@ -1,0 +1,1429 @@
+/* ==========================================================================
+   JYOTISH VANI - COMPLETE MODERN MULTI-REALM VEDIC DESIGN SYSTEM
+   Every section features a DISTINCT, UNIQUE background design and color palette
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+:root {
+    /* Core Typography Colors */
+    --text-white: #ffffff;
+    --text-heading: #f8fafc;
+    --text-silver: #cbd5e1;
+    --text-muted: #94a3b8;
+    
+    /* Sacred Vedic Gold Accents */
+    --gold-primary: #f59e0b;
+    --gold-light: #fde047;
+    --gold-rich: #d97706;
+    --gold-amber: #ff9f1c;
+    --gold-gradient: linear-gradient(135deg, #ff9f1c 0%, #ffc837 50%, #f59e0b 100%);
+    --gold-glow: 0 0 28px rgba(245, 158, 11, 0.35);
+}
+
+/* Global Reset */
+html {
+    scroll-behavior: smooth !important;
+}
+
+html, body {
+    background-color: #06040e !important;
+    color: var(--text-silver) !important;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    overflow-x: hidden !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-white) !important;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+p {
+    color: var(--text-silver) !important;
+    font-size: 15.5px;
+    line-height: 1.7;
+}
+
+a {
+    color: var(--gold-primary);
+    transition: all 0.25s ease;
+}
+
+a:hover {
+    color: var(--gold-light);
+}
+
+/* Subtle decorative floating shapes */
+ul.shaps-img {
+    pointer-events: none !important;
+    z-index: 1 !important;
+}
+
+ul.shaps-img li img {
+    opacity: 0.16 !important;
+    filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.3)) !important;
+}
+
+/* ==========================================================================
+   00. PRELOADER - RADIANT SACRED OM AURA
+   ========================================================================== */
+
+#preloader {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 999999 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at center, #231245 0%, #080415 80%) !important;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+.om-symbol {
+    font-size: 78px;
+    color: var(--gold-light) !important;
+    text-shadow: 0 0 40px rgba(245, 158, 11, 0.85), 0 0 80px rgba(245, 158, 11, 0.45);
+    animation: omPulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes omPulse {
+    0% { transform: scale(0.96); filter: brightness(0.95); }
+    100% { transform: scale(1.08); filter: brightness(1.3); text-shadow: 0 0 60px rgba(253, 224, 71, 0.95), 0 0 100px rgba(245, 158, 11, 0.65); }
+}
+
+.loader-content p {
+    color: var(--text-silver) !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px !important;
+    margin: 10px 0;
+}
+
+.loader-content h1 {
+    font-size: 48px !important;
+    font-weight: 800;
+    background: linear-gradient(135deg, #ffffff 0%, #fde047 50%, #f59e0b 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    margin-bottom: 20px;
+}
+
+.loader-spinner {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 3px solid rgba(245, 158, 11, 0.15) !important;
+    border-top: 3px solid var(--gold-primary) !important;
+    border-right: 3px solid var(--gold-light) !important;
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+    animation: spin 1s linear infinite;
+    margin: 0 auto 15px auto;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loader-content span {
+    color: var(--gold-light) !important;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   01. HEADER & NAVIGATION - FLOATING CELESTIAL ACRYLIC CAPSULE
+   ========================================================================== */
+
+#stickyHeader {
+    padding: 16px 0;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1000;
+}
+
+#stickyHeader.slideUp {
+    transform: translateY(-110%);
+}
+
+#stickyHeader.slideDown {
+    transform: translateY(0);
+}
+
+.top-bar {
+    background: rgba(13, 10, 30, 0.88) !important;
+    backdrop-filter: blur(22px) !important;
+    -webkit-backdrop-filter: blur(22px) !important;
+    border: 1.5px solid rgba(245, 158, 11, 0.3) !important;
+    border-radius: 40px !important;
+    padding: 12px 36px !important;
+    box-shadow: 0 14px 40px -5px rgba(0, 0, 0, 0.7), 0 0 25px rgba(245, 158, 11, 0.12) !important;
+    transition: all 0.35s ease;
+}
+
+.top-bar:hover {
+    border-color: rgba(245, 158, 11, 0.5) !important;
+    box-shadow: 0 18px 48px -5px rgba(0, 0, 0, 0.8), 0 0 32px rgba(245, 158, 11, 0.2) !important;
+}
+
+.logo a {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-white) !important;
+}
+
+.logo img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--gold-primary);
+    box-shadow: 0 0 14px rgba(245, 158, 11, 0.45);
+    transition: transform 0.3s ease;
+}
+
+.logo a:hover img {
+    transform: rotate(12deg) scale(1.05);
+}
+
+.logo b {
+    font-size: 22px !important;
+    font-weight: 800 !important;
+    background: linear-gradient(135deg, #ffffff 0%, #fde047 60%, #f59e0b 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    letter-spacing: -0.3px;
+    padding-left: 0 !important;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-dropdown a {
+    color: #e2e8f0 !important;
+    font-size: 14.5px !important;
+    font-weight: 600 !important;
+    padding: 8px 18px !important;
+    border-radius: 30px;
+    position: relative;
+    transition: all 0.25s ease !important;
+}
+
+.navbar-dropdown a:hover {
+    color: var(--gold-light) !important;
+    background: rgba(245, 158, 11, 0.12);
+}
+
+/* ==========================================================================
+   SECTION 1: HERO SECTION
+   DISTINCT THEME: DEEP COSMIC TWILIGHT & SOLAR SURYA GOLD GALAXY
+   Deep purple/obsidian void with Rotating Vedic Mandala & Starlight Constellation Grid
+   ========================================================================== */
+
+.hero-section.three {
+    background-color: #0d0722 !important;
+    background-image: 
+        url('../img/cosmic-stars-grid.svg'),
+        radial-gradient(circle at 75% 20%, rgba(255, 159, 28, 0.3) 0%, transparent 45%),
+        radial-gradient(circle at 20% 70%, rgba(139, 92, 246, 0.32) 0%, transparent 50%),
+        radial-gradient(circle at 50% 30%, rgba(245, 158, 11, 0.2) 0%, transparent 55%),
+        linear-gradient(180deg, #0d0722 0%, #170d38 55%, #0e0725 100%) !important;
+    background-size: 550px 550px, 100% 100%, 100% 100%, 100% 100%, 100% 100% !important;
+    background-repeat: repeat, no-repeat, no-repeat, no-repeat, no-repeat !important;
+    border-bottom: 1.5px solid rgba(245, 158, 11, 0.3) !important;
+    padding-top: 135px !important;
+    padding-bottom: 80px !important;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Rotating Sacred Vedic Zodiac Mandala in Hero Background */
+.hero-section.three::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 920px;
+    height: 920px;
+    background: url('../img/hero-vedic-mandala.svg') no-repeat center center;
+    background-size: contain;
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 1;
+    animation: heroMandalaSpin 100s linear infinite;
+}
+
+@keyframes heroMandalaSpin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.hero-section.three .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text span.title-animation a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(245, 158, 11, 0.14) !important;
+    color: var(--gold-light) !important;
+    border: 1px solid rgba(245, 158, 11, 0.4) !important;
+    padding: 8px 24px !important;
+    border-radius: 30px !important;
+    font-size: 13.5px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    margin-bottom: 22px !important;
+    box-shadow: 0 0 22px rgba(245, 158, 11, 0.2);
+}
+
+.hero-text h1 {
+    font-size: 52px !important;
+    font-weight: 800 !important;
+    line-height: 1.18 !important;
+    color: #ffffff !important;
+    margin-bottom: 30px !important;
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Talk To Jyotishi Container */
+.talk-jyotishi-container {
+    background: linear-gradient(145deg, rgba(28, 18, 58, 0.92) 0%, rgba(16, 10, 36, 0.96) 100%) !important;
+    border: 1.5px solid rgba(245, 158, 11, 0.38) !important;
+    border-radius: 28px !important;
+    padding: 30px 36px !important;
+    margin-top: 32px !important;
+    box-shadow: 0 25px 65px -10px rgba(0, 0, 0, 0.85), 0 0 40px rgba(245, 158, 11, 0.18) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    position: relative;
+    z-index: 2;
+    transition: all 0.35s ease !important;
+}
+
+.talk-jyotishi-container:hover {
+    transform: translateY(-4px) !important;
+    border-color: rgba(245, 158, 11, 0.65) !important;
+    box-shadow: 0 32px 75px -10px rgba(0, 0, 0, 0.9), 0 0 50px rgba(245, 158, 11, 0.3) !important;
+}
+
+.tjc-header {
+    border-bottom: 1px solid rgba(245, 158, 11, 0.2) !important;
+    padding-bottom: 18px !important;
+    margin-bottom: 22px !important;
+}
+
+.tjc-live-pill {
+    background: rgba(16, 185, 129, 0.15) !important;
+    border: 1px solid rgba(16, 185, 129, 0.5) !important;
+    color: #6ee7b7 !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    padding: 6px 16px !important;
+    border-radius: 50px !important;
+}
+
+.tjc-rating-pill {
+    color: var(--text-silver) !important;
+}
+
+.tjc-stars {
+    color: var(--gold-light) !important;
+}
+
+.tjc-icon-circle {
+    background: var(--gold-gradient) !important;
+    color: #0b0717 !important;
+    box-shadow: 0 10px 28px rgba(245, 158, 11, 0.45) !important;
+}
+
+.tjc-title-wrap h3 {
+    color: #ffffff !important;
+    font-size: 26px !important;
+    font-weight: 800 !important;
+}
+
+.tjc-tag-fast {
+    background: rgba(245, 158, 11, 0.16) !important;
+    color: var(--gold-light) !important;
+    border: 1px solid rgba(245, 158, 11, 0.4) !important;
+    font-size: 11.5px !important;
+    font-weight: 700 !important;
+    padding: 4px 10px !important;
+    border-radius: 20px !important;
+}
+
+.tjc-info p {
+    color: var(--text-silver) !important;
+    font-size: 14.5px !important;
+}
+
+.tjc-chip {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    color: var(--text-silver) !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    padding: 5px 12px !important;
+    border-radius: 20px !important;
+}
+
+.tjc-chip i {
+    color: var(--gold-primary) !important;
+}
+
+.tjc-chip-offer {
+    background: rgba(16, 185, 129, 0.16) !important;
+    border-color: rgba(16, 185, 129, 0.5) !important;
+    color: #6ee7b7 !important;
+}
+
+.tjc-btn-call {
+    background: var(--gold-gradient) !important;
+    color: #0b0717 !important;
+    border: 1px solid #ffd166 !important;
+    box-shadow: 0 8px 24px rgba(245, 158, 11, 0.35) !important;
+}
+
+.tjc-btn-call:hover {
+    transform: translateY(-3px) scale(1.02) !important;
+    box-shadow: 0 12px 32px rgba(245, 158, 11, 0.5) !important;
+    color: #000000 !important;
+}
+
+.tjc-btn-call i, .tjc-btn-call strong {
+    color: #0b0717 !important;
+}
+
+.tjc-btn-call small {
+    color: rgba(11, 7, 23, 0.8) !important;
+}
+
+.tjc-btn-chat {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #ffffff !important;
+    border: 1.5px solid rgba(245, 158, 11, 0.45) !important;
+}
+
+.tjc-btn-chat:hover {
+    background: rgba(245, 158, 11, 0.2) !important;
+    border-color: var(--gold-light) !important;
+    color: var(--gold-light) !important;
+    transform: translateY(-3px) scale(1.02) !important;
+}
+
+.tjc-btn-chat i {
+    color: var(--gold-light) !important;
+}
+
+.tjc-btn-chat strong {
+    color: #ffffff !important;
+}
+
+.tjc-btn-chat small {
+    color: var(--text-silver) !important;
+}
+
+/* ==========================================================================
+   SECTION 2: CONSULTATIONS & PRICING (#pricing)
+   DISTINCT THEME: SACRED ROYAL SAFFRON & GOLDEN AMBER REALM
+   Warm, rich, spiritual amber & saffron glow over deep plum velvet
+   ========================================================================== */
+
+#pricing.pricing-section-wrap {
+    background-color: #170928 !important;
+    background-image: 
+        url('../img/pricing-vedic-pattern.svg'),
+        radial-gradient(ellipse at 50% 20%, rgba(255, 119, 0, 0.22) 0%, transparent 55%),
+        radial-gradient(circle at 10% 80%, rgba(245, 158, 11, 0.2) 0%, transparent 45%),
+        radial-gradient(circle at 90% 70%, rgba(217, 119, 6, 0.18) 0%, transparent 45%),
+        linear-gradient(180deg, #170928 0%, #29103e 50%, #150826 100%) !important;
+    background-size: 380px 380px, 100% 100%, 100% 100%, 100% 100%, 100% 100% !important;
+    background-repeat: repeat, no-repeat, no-repeat, no-repeat, no-repeat !important;
+    border-bottom: 1.5px solid rgba(255, 159, 28, 0.25) !important;
+    padding: 85px 0 75px 0 !important;
+    position: relative;
+    z-index: 3;
+}
+
+.pricing-header-pill {
+    background: rgba(255, 159, 28, 0.16) !important;
+    color: #fed7aa !important;
+    border: 1.5px solid rgba(255, 159, 28, 0.45) !important;
+    font-size: 13.5px !important;
+    font-weight: 700 !important;
+    padding: 8px 26px !important;
+    border-radius: 30px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.8px !important;
+    box-shadow: 0 0 25px rgba(255, 159, 28, 0.22) !important;
+}
+
+.consult-card {
+    background: linear-gradient(155deg, rgba(38, 18, 62, 0.9) 0%, rgba(20, 9, 36, 0.96) 100%) !important;
+    border: 1.5px solid rgba(255, 159, 28, 0.25) !important;
+    border-radius: 24px !important;
+    padding: 28px 24px !important;
+    box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    transition: all 0.35s ease !important;
+}
+
+.consult-card:hover {
+    transform: translateY(-8px) !important;
+    border-color: rgba(255, 159, 28, 0.65) !important;
+    box-shadow: 0 24px 55px -10px rgba(0, 0, 0, 0.85), 0 0 35px rgba(255, 159, 28, 0.25) !important;
+}
+
+.consult-card-chat {
+    border-color: rgba(244, 63, 94, 0.35) !important;
+}
+.consult-card-chat:hover {
+    border-color: rgba(244, 63, 94, 0.75) !important;
+    box-shadow: 0 24px 55px -10px rgba(0, 0, 0, 0.85), 0 0 35px rgba(244, 63, 94, 0.3) !important;
+}
+.consult-card-chat .consult-icon-box {
+    background: linear-gradient(135deg, #f43f5e 0%, #be123c 100%) !important;
+}
+
+.consult-card-call {
+    background: linear-gradient(155deg, rgba(50, 24, 82, 0.95) 0%, rgba(25, 11, 44, 0.98) 100%) !important;
+    border: 2px solid rgba(255, 159, 28, 0.65) !important;
+    box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.8), 0 0 40px rgba(255, 159, 28, 0.3) !important;
+}
+.consult-card-call:hover {
+    border-color: #ffd166 !important;
+    box-shadow: 0 28px 65px -10px rgba(0, 0, 0, 0.9), 0 0 55px rgba(255, 159, 28, 0.45) !important;
+}
+.consult-card-call .consult-icon-box {
+    background: var(--gold-gradient) !important;
+    color: #0b0717 !important;
+}
+.consult-card-call .consult-btn {
+    background: var(--gold-gradient) !important;
+    color: #0b0717 !important;
+    border: none !important;
+}
+
+.consult-card-mall {
+    border-color: rgba(16, 185, 129, 0.35) !important;
+}
+.consult-card-mall:hover {
+    border-color: rgba(16, 185, 129, 0.75) !important;
+}
+.consult-card-mall .consult-icon-box {
+    background: linear-gradient(135deg, #10b981 0%, #047857 100%) !important;
+}
+
+.consult-card-pooja {
+    border-color: rgba(245, 158, 11, 0.35) !important;
+}
+.consult-card-pooja:hover {
+    border-color: rgba(245, 158, 11, 0.75) !important;
+}
+.consult-card-pooja .consult-icon-box {
+    background: linear-gradient(135deg, #f59e0b 0%, #b45309 100%) !important;
+}
+
+.consult-tag {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #f1f5f9 !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+}
+
+.consult-title {
+    color: #ffffff !important;
+    font-size: 19px !important;
+    font-weight: 800 !important;
+}
+
+.consult-desc {
+    color: var(--text-silver) !important;
+    font-size: 13.5px !important;
+}
+
+.consult-price-current {
+    color: #ffffff !important;
+    font-size: 20px !important;
+    font-weight: 800 !important;
+}
+
+.consult-price-old {
+    color: var(--text-muted) !important;
+}
+
+.consult-btn {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 159, 28, 0.35) !important;
+}
+
+.consult-card:hover .consult-btn {
+    background: var(--gold-gradient) !important;
+    color: #0b0717 !important;
+    border-color: #ffd166 !important;
+}
+
+/* ==========================================================================
+   SECTION 3: SACRED VEDIC SOLUTIONS (#about)
+   DISTINCT THEME: CELESTIAL SAPPHIRE & MIDNIGHT NAKSHATRA BLUE REALM
+   Cool, mystical, deep starry night sky reminiscent of Vedic astrology charts
+   ========================================================================== */
+
+#about {
+    position: relative;
+    background-color: #070e24 !important;
+    background-image: 
+        url('../img/services-kundli-chart.svg'),
+        radial-gradient(circle at 80% 25%, rgba(14, 165, 233, 0.24) 0%, transparent 48%),
+        radial-gradient(circle at 18% 75%, rgba(99, 102, 241, 0.25) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(2, 132, 199, 0.15) 0%, transparent 55%),
+        linear-gradient(180deg, #070e24 0%, #0e1e47 50%, #08102b 100%) !important;
+    background-position: center center, center center, center center, center center, center center !important;
+    background-size: 750px 750px, 100% 100%, 100% 100%, 100% 100%, 100% 100% !important;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat !important;
+    border-bottom: 1.5px solid rgba(14, 165, 233, 0.28) !important;
+    padding: 85px 0 !important;
+    z-index: 3;
+}
+
+.services-badge-pill {
+    background: rgba(14, 165, 233, 0.15) !important;
+    color: #7dd3fc !important;
+    border: 1.5px solid rgba(14, 165, 233, 0.45) !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    padding: 7px 22px !important;
+    border-radius: 30px !important;
+    box-shadow: 0 0 25px rgba(14, 165, 233, 0.22) !important;
+}
+
+.services-header h2 {
+    color: #ffffff !important;
+    font-size: 42px !important;
+    font-weight: 800 !important;
+}
+
+.services-header p {
+    color: #94a3b8 !important;
+}
+
+.service-grid-card {
+    background: linear-gradient(155deg, rgba(16, 32, 70, 0.88) 0%, rgba(8, 18, 42, 0.95) 100%) !important;
+    border: 1.5px solid rgba(14, 165, 233, 0.25) !important;
+    border-radius: 24px !important;
+    padding: 30px 26px !important;
+    box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    transition: all 0.35s ease !important;
+}
+
+.service-grid-card::after {
+    background: linear-gradient(90deg, #38bdf8, #818cf8) !important;
+}
+
+.service-grid-card:hover {
+    transform: translateY(-8px) !important;
+    border-color: rgba(56, 189, 248, 0.65) !important;
+    box-shadow: 0 24px 55px -10px rgba(0, 0, 0, 0.85), 0 0 35px rgba(56, 189, 248, 0.25) !important;
+}
+
+.service-card-badge {
+    background: rgba(14, 165, 233, 0.16) !important;
+    color: #7dd3fc !important;
+    border: 1px solid rgba(14, 165, 233, 0.4) !important;
+}
+
+.service-grid-card h3 {
+    color: #ffffff !important;
+    font-size: 21px !important;
+    font-weight: 800 !important;
+}
+
+.service-grid-card p {
+    color: #cbd5e1 !important;
+    font-size: 14.5px !important;
+}
+
+.service-card-link {
+    color: #38bdf8 !important;
+    font-weight: 700 !important;
+}
+
+.service-grid-card:hover .service-card-link {
+    color: #ffffff !important;
+    text-shadow: 0 0 12px rgba(56, 189, 248, 0.8);
+}
+
+/* ==========================================================================
+   SECTION 4: HOW IT WORKS (#services)
+   DISTINCT THEME: MYSTIC ROYAL AMETHYST & SPIRITUAL PURPLE REALM
+   Intuitive, sacred violet atmosphere for divine connection
+   ========================================================================== */
+
+#services.how-it-works-section-wrap {
+    background-color: #180930 !important;
+    background-image: 
+        url('../img/cosmic-stars-grid.svg'),
+        radial-gradient(circle at 25% 25%, rgba(168, 85, 247, 0.28) 0%, transparent 48%),
+        radial-gradient(circle at 78% 75%, rgba(236, 72, 153, 0.22) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(147, 51, 234, 0.16) 0%, transparent 55%),
+        linear-gradient(180deg, #180930 0%, #2e1156 50%, #15082a 100%) !important;
+    background-size: 600px 600px, 100% 100%, 100% 100%, 100% 100%, 100% 100% !important;
+    background-repeat: repeat, no-repeat, no-repeat, no-repeat, no-repeat !important;
+    border-bottom: 1.5px solid rgba(168, 85, 247, 0.28) !important;
+    padding: 85px 0 !important;
+    position: relative;
+    z-index: 3;
+}
+
+.heading.two span.title-animation, .heading span.title-animation {
+    color: #d8b4fe !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.5px !important;
+}
+
+.heading.two h2, .heading h2 {
+    color: #ffffff !important;
+    font-size: 42px !important;
+    font-weight: 800 !important;
+}
+
+ul.chek li {
+    color: #e2e8f0 !important;
+    font-size: 15.5px !important;
+    line-height: 1.7 !important;
+}
+
+ul.chek li i {
+    color: #c084fc !important;
+    text-shadow: 0 0 12px rgba(192, 132, 252, 0.6);
+}
+
+.hiw-step-card {
+    background: linear-gradient(155deg, rgba(45, 18, 84, 0.88) 0%, rgba(24, 9, 46, 0.95) 100%) !important;
+    border: 1.5px solid rgba(168, 85, 247, 0.25) !important;
+    border-radius: 20px !important;
+    padding: 24px 22px !important;
+    box-shadow: 0 12px 35px -5px rgba(0, 0, 0, 0.65) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+    transition: all 0.35s ease !important;
+}
+
+.hiw-step-card:hover {
+    transform: translateX(6px) !important;
+    border-color: rgba(168, 85, 247, 0.65) !important;
+    box-shadow: 0 18px 45px -5px rgba(0, 0, 0, 0.75), 0 0 30px rgba(168, 85, 247, 0.3) !important;
+}
+
+.hiw-step-num {
+    background: linear-gradient(135deg, #a855f7 0%, #d946ef 100%) !important;
+    color: #ffffff !important;
+    font-weight: 900 !important;
+    box-shadow: 0 6px 18px rgba(168, 85, 247, 0.5) !important;
+}
+
+.hiw-step-content h4 {
+    color: #ffffff !important;
+    font-size: 18px !important;
+    font-weight: 800 !important;
+}
+
+.hiw-step-content p {
+    color: #cbd5e1 !important;
+}
+
+/* ==========================================================================
+   SECTION 5: MOBILE APP SHOWCASE (#app-screens)
+   DISTINCT THEME: EMERALD JADE & ASTROLOGICAL FORTUNE GREEN REALM
+   Prosperity, Mercury Budha healing, and high-tech digital growth
+   ========================================================================== */
+
+#app-screens {
+    background: 
+        radial-gradient(circle at 75% 30%, rgba(16, 185, 129, 0.24) 0%, transparent 48%),
+        radial-gradient(circle at 20% 75%, rgba(20, 184, 166, 0.22) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(5, 150, 105, 0.16) 0%, transparent 55%),
+        linear-gradient(180deg, #071c17 0%, #0d332a 50%, #071914 100%) !important;
+    border-bottom: 1.5px solid rgba(16, 185, 129, 0.28) !important;
+    padding: 85px 0 !important;
+    position: relative;
+    z-index: 3;
+}
+
+.store-badge {
+    background: linear-gradient(145deg, rgba(14, 48, 38, 0.9) 0%, rgba(6, 24, 19, 0.95) 100%) !important;
+    border: 1.5px solid rgba(16, 185, 129, 0.45) !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6), 0 0 20px rgba(16, 185, 129, 0.15) !important;
+    border-radius: 16px !important;
+    transition: all 0.3s ease !important;
+}
+
+.store-badge:hover {
+    transform: translateY(-4px) !important;
+    border-color: #6ee7b7 !important;
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.75), 0 0 30px rgba(16, 185, 129, 0.35) !important;
+}
+
+.store-badge-text small {
+    color: #a7f3d0 !important;
+}
+
+.store-badge-text strong {
+    color: #ffffff !important;
+}
+
+.store-trust-meta {
+    color: #cbd5e1 !important;
+}
+
+.store-stars {
+    color: #34d399 !important;
+    text-shadow: 0 0 10px rgba(52, 211, 153, 0.7);
+}
+
+.app-screen-card {
+    background: linear-gradient(155deg, rgba(16, 44, 35, 0.8) 0%, rgba(7, 22, 17, 0.92) 100%) !important;
+    border: 1.5px solid rgba(16, 185, 129, 0.3) !important;
+    border-radius: 24px !important;
+    padding: 10px !important;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 25px rgba(16, 185, 129, 0.15) !important;
+    transition: all 0.4s ease;
+}
+
+.app-screen-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    border-color: #34d399 !important;
+    box-shadow: 0 28px 60px rgba(0, 0, 0, 0.85), 0 0 35px rgba(16, 185, 129, 0.3) !important;
+}
+
+/* ==========================================================================
+   SECTION 6: CLIENT STATS / SATISFACTION NUMBERS (.section-client)
+   DISTINCT THEME: RADIANT GOLDEN SUNRISE & DHANA YOGA RIBBON
+   Vibrant, wealthy, golden Vedic milestone banner
+   ========================================================================== */
+
+.section-client {
+    background: 
+        radial-gradient(ellipse at 50% 50%, rgba(245, 158, 11, 0.25) 0%, transparent 65%),
+        radial-gradient(circle at 15% 50%, rgba(217, 119, 6, 0.2) 0%, transparent 45%),
+        radial-gradient(circle at 85% 50%, rgba(251, 191, 36, 0.18) 0%, transparent 45%),
+        linear-gradient(180deg, #1b1303 0%, #312105 50%, #160f02 100%) !important;
+    border-bottom: 1.5px solid rgba(245, 158, 11, 0.35) !important;
+    padding: 60px 0 !important;
+    position: relative;
+    z-index: 3;
+}
+
+.count-style {
+    background: linear-gradient(155deg, rgba(46, 31, 7, 0.9) 0%, rgba(22, 15, 3, 0.96) 100%) !important;
+    border: 1.5px solid rgba(245, 158, 11, 0.45) !important;
+    border-radius: 28px !important;
+    padding: 36px 30px !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65), 0 0 30px rgba(245, 158, 11, 0.2) !important;
+    backdrop-filter: blur(16px) !important;
+    text-align: center;
+    transition: all 0.35s ease;
+}
+
+.count-style:hover {
+    transform: translateY(-6px);
+    border-color: #fde047 !important;
+    box-shadow: 0 28px 60px rgba(0, 0, 0, 0.75), 0 0 40px rgba(245, 158, 11, 0.35) !important;
+}
+
+.count-style h2 {
+    font-size: 72px !important;
+    font-weight: 900 !important;
+    background: linear-gradient(135deg, #ffffff 0%, #fde047 50%, #f59e0b 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    margin-bottom: 12px !important;
+}
+
+.count-style h2 sup {
+    color: var(--gold-light) !important;
+    -webkit-text-fill-color: var(--gold-light) !important;
+    font-size: 40px !important;
+}
+
+.count-style h4 {
+    color: #ffffff !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+}
+
+/* ==========================================================================
+   SECTION 7: CLIENT REVIEWS MARQUEE (.clients-section)
+   DISTINCT THEME: DEEP COSMIC VELVET & RUBY MAGENTA REALM
+   Warm, intimate, luxurious burgundy and rose velvet night
+   ========================================================================== */
+
+.clients-section {
+    background: 
+        radial-gradient(circle at 20% 35%, rgba(225, 29, 72, 0.24) 0%, transparent 48%),
+        radial-gradient(circle at 80% 65%, rgba(147, 51, 234, 0.25) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(190, 18, 60, 0.16) 0%, transparent 55%),
+        linear-gradient(180deg, #1d071b 0%, #350f31 50%, #170615 100%) !important;
+    border-bottom: 1.5px solid rgba(225, 29, 72, 0.28) !important;
+    padding: 85px 0 !important;
+    position: relative;
+    z-index: 3;
+}
+
+.clients {
+    background: linear-gradient(155deg, rgba(50, 15, 43, 0.9) 0%, rgba(25, 7, 21, 0.96) 100%) !important;
+    border: 1.5px solid rgba(225, 29, 72, 0.3) !important;
+    border-radius: 22px !important;
+    padding: 26px 28px !important;
+    box-shadow: 0 16px 35px -5px rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(14px) !important;
+    margin-right: 24px;
+    transition: all 0.3s ease;
+}
+
+.clients:hover {
+    border-color: rgba(225, 29, 72, 0.7) !important;
+    box-shadow: 0 20px 45px -5px rgba(0, 0, 0, 0.8), 0 0 30px rgba(225, 29, 72, 0.25) !important;
+}
+
+.clients h3 {
+    color: #ffffff !important;
+    font-size: 19px !important;
+    font-weight: 800 !important;
+}
+
+.clients i.fa-quote-right {
+    color: #fb7185 !important;
+    font-size: 24px;
+}
+
+ul.star li i {
+    color: #fde047 !important;
+    text-shadow: 0 0 8px rgba(253, 224, 71, 0.6);
+}
+
+.clients p {
+    color: #f1f5f9 !important;
+    font-size: 14.5px !important;
+    line-height: 1.65 !important;
+}
+
+/* ==========================================================================
+   SECTION 8: HIRING ASTROLOGERS (.hiring-section)
+   DISTINCT THEME: MAJESTIC ROYAL MAROON & MOLTEN GOLD PALACE REALM
+   Authoritative, prestigious, high-converting recruitment banner
+   ========================================================================== */
+
+.hiring-section {
+    background: 
+        radial-gradient(circle at 50% 50%, rgba(180, 83, 9, 0.18) 0%, transparent 60%),
+        linear-gradient(180deg, #140509 0%, #1f070e 50%, #110408 100%) !important;
+    border-bottom: 1.5px solid rgba(245, 158, 11, 0.3) !important;
+    padding: 75px 0 !important;
+    position: relative;
+    z-index: 3;
+}
+
+.hiring-container {
+    background: 
+        radial-gradient(ellipse at 85% 20%, rgba(255, 183, 3, 0.28) 0%, transparent 48%),
+        radial-gradient(circle at 18% 80%, rgba(225, 29, 72, 0.3) 0%, transparent 50%),
+        linear-gradient(135deg, #300a14 0%, #521223 50%, #25060e 100%) !important;
+    border: 2px solid rgba(245, 158, 11, 0.5) !important;
+    border-radius: 32px !important;
+    box-shadow: 0 30px 75px rgba(0, 0, 0, 0.85), 0 0 50px rgba(245, 158, 11, 0.22) !important;
+}
+
+.hiring-content .brand-name {
+    background: rgba(245, 158, 11, 0.2) !important;
+    color: var(--gold-light) !important;
+    border: 1.5px solid rgba(245, 158, 11, 0.5) !important;
+    border-radius: 30px !important;
+    padding: 6px 20px !important;
+    font-size: 13px !important;
+    letter-spacing: 1.5px !important;
+    font-weight: 800 !important;
+}
+
+.hiring-sub {
+    color: #fed7aa !important;
+    font-weight: 700 !important;
+    letter-spacing: 2px !important;
+}
+
+.hiring-title {
+    font-size: 64px !important;
+    font-weight: 900 !important;
+    background: linear-gradient(135deg, #ffffff 0%, #fde047 50%, #f59e0b 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.hiring-label {
+    background: var(--gold-gradient) !important;
+    color: #0b0717 !important;
+    font-weight: 900 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 6px 22px rgba(245, 158, 11, 0.45) !important;
+}
+
+.hiring-description {
+    color: #e2e8f0 !important;
+    font-size: 16px !important;
+}
+
+.benefit {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(245, 158, 11, 0.35) !important;
+    border-radius: 16px !important;
+    transition: all 0.3s ease;
+}
+
+.benefit:hover {
+    background: rgba(245, 158, 11, 0.18) !important;
+    border-color: var(--gold-light) !important;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.25);
+}
+
+.benefit span i {
+    color: var(--gold-light) !important;
+    font-size: 22px;
+}
+
+.benefit h4 {
+    color: #ffffff !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+}
+
+.join-btn {
+    background: var(--gold-gradient) !important;
+    color: #0b0717 !important;
+    font-weight: 800 !important;
+    border: 1px solid #ffd166 !important;
+    border-radius: 30px !important;
+    padding: 14px 34px !important;
+    box-shadow: 0 10px 30px rgba(245, 158, 11, 0.45) !important;
+}
+
+.join-btn:hover {
+    color: #000000 !important;
+    transform: translateY(-3px) scale(1.03) !important;
+    box-shadow: 0 16px 40px rgba(245, 158, 11, 0.6) !important;
+}
+
+/* ==========================================================================
+   SECTION 9: FAQ & CONTACT HUB (.accordion-section)
+   DISTINCT THEME: MOONSTONE PLATINUM & SLATE OBSIDIAN REALM
+   Calm, clear, high-contrast reading environment with diamond highlights
+   ========================================================================== */
+
+.accordion-section {
+    background: 
+        radial-gradient(circle at 45% 20%, rgba(148, 163, 184, 0.2) 0%, transparent 48%),
+        radial-gradient(circle at 80% 70%, rgba(245, 158, 11, 0.18) 0%, transparent 50%),
+        linear-gradient(180deg, #0b0f19 0%, #151d30 50%, #090d16 100%) !important;
+    border-bottom: 1.5px solid rgba(148, 163, 184, 0.25) !important;
+    padding: 85px 0 !important;
+    position: relative;
+    z-index: 3;
+}
+
+.accordion-item {
+    background: linear-gradient(155deg, rgba(26, 36, 58, 0.88) 0%, rgba(13, 18, 30, 0.96) 100%) !important;
+    border: 1.5px solid rgba(148, 163, 184, 0.22) !important;
+    border-radius: 20px !important;
+    margin-bottom: 16px !important;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.65) !important;
+    backdrop-filter: blur(14px) !important;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.accordion-item.active {
+    border-color: rgba(245, 158, 11, 0.7) !important;
+    box-shadow: 0 16px 40px -5px rgba(0, 0, 0, 0.8), 0 0 30px rgba(245, 158, 11, 0.22) !important;
+}
+
+.accordion-item a.heading {
+    color: #ffffff !important;
+    padding: 22px 26px !important;
+    font-size: 17.5px !important;
+    font-weight: 700 !important;
+}
+
+.accordion-item .title {
+    color: #ffffff !important;
+    font-size: 17.5px !important;
+    font-weight: 700 !important;
+}
+
+.accordion-item .content p {
+    color: #cbd5e1 !important;
+    padding: 0 26px 24px 26px !important;
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+}
+
+.accordion-contact {
+    background: linear-gradient(155deg, rgba(30, 42, 68, 0.92) 0%, rgba(14, 20, 34, 0.97) 100%) !important;
+    border: 1.5px solid rgba(245, 158, 11, 0.4) !important;
+    border-radius: 24px !important;
+    padding: 30px 24px !important;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.75), 0 0 25px rgba(245, 158, 11, 0.15) !important;
+    backdrop-filter: blur(16px) !important;
+}
+
+.accordion-contact h4 {
+    color: #ffffff !important;
+    font-size: 16.5px !important;
+    margin-bottom: 14px !important;
+}
+
+.accordion-contact h4 a {
+    color: var(--gold-light) !important;
+}
+
+.accordion-contact a.button.btn {
+    background: var(--gold-gradient) !important;
+    color: #0b0717 !important;
+    border-radius: 30px !important;
+    padding: 12px 28px !important;
+    box-shadow: 0 8px 24px rgba(245, 158, 11, 0.4) !important;
+}
+
+.accordion-contact a.button.btn span span {
+    color: #0b0717 !important;
+    font-weight: 800 !important;
+}
+
+/* ==========================================================================
+   SECTION 10: FOOTER (footer)
+   DISTINCT THEME: PURE COSMIC MIDNIGHT VOID & GOLDEN GALAXY HORIZON
+   The deepest celestial night canopy with a glowing solar crest
+   ========================================================================== */
+
+footer.gap {
+    background: 
+        radial-gradient(circle at 50% 0%, rgba(245, 158, 11, 0.22) 0%, transparent 45%),
+        radial-gradient(circle at 15% 30%, rgba(124, 58, 237, 0.15) 0%, transparent 40%),
+        linear-gradient(180deg, #0a0618 0%, #030209 100%) !important;
+    border-top: 2px solid rgba(245, 158, 11, 0.35) !important;
+    padding-top: 85px !important;
+    position: relative;
+    z-index: 3;
+}
+
+.footer-try {
+    background: linear-gradient(155deg, rgba(32, 20, 64, 0.95) 0%, rgba(14, 8, 30, 0.98) 100%) !important;
+    border: 1.5px solid rgba(245, 158, 11, 0.4) !important;
+    border-radius: 28px !important;
+    padding: 40px 48px !important;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 35px rgba(245, 158, 11, 0.18) !important;
+    margin-bottom: 60px !important;
+}
+
+.footer-try h2 {
+    color: #ffffff !important;
+    font-size: 38px !important;
+    font-weight: 800 !important;
+}
+
+.footer-try a.button.btn {
+    background: var(--gold-gradient) !important;
+    color: #0b0717 !important;
+    border: 1px solid #ffd166 !important;
+    border-radius: 30px !important;
+    font-weight: 800 !important;
+    box-shadow: 0 10px 28px rgba(245, 158, 11, 0.45) !important;
+}
+
+.footer-try a.button.btn span span {
+    color: #0b0717 !important;
+}
+
+.footer-logo p {
+    color: #cbd5e1 !important;
+    font-size: 14.5px !important;
+    line-height: 1.7 !important;
+}
+
+.social-media li a {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: var(--gold-light) !important;
+    border: 1px solid rgba(245, 158, 11, 0.35) !important;
+    border-radius: 50% !important;
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.social-media li a:hover {
+    background: var(--gold-gradient) !important;
+    color: #0b0717 !important;
+    transform: translateY(-4px) rotate(8deg);
+    box-shadow: 0 8px 22px rgba(245, 158, 11, 0.45);
+}
+
+.widget-title h3 {
+    color: #ffffff !important;
+    font-size: 20px !important;
+    font-weight: 800 !important;
+    margin-bottom: 24px !important;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.widget-title h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: var(--gold-gradient);
+    border-radius: 2px;
+}
+
+.widget-title ul li i {
+    color: var(--gold-primary) !important;
+    margin-right: 8px;
+}
+
+.widget-title ul li a {
+    color: #cbd5e1 !important;
+    font-size: 14.5px !important;
+}
+
+.widget-title ul li a:hover {
+    color: var(--gold-light) !important;
+    padding-left: 6px;
+}
+
+.get-in-touch i {
+    background: rgba(245, 158, 11, 0.16) !important;
+    color: var(--gold-light) !important;
+    border: 1px solid rgba(245, 158, 11, 0.4) !important;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.get-in-touch span {
+    color: var(--text-muted) !important;
+}
+
+.get-in-touch h6 a {
+    color: #ffffff !important;
+    font-size: 15.5px !important;
+    font-weight: 700 !important;
+}
+
+.all-rights {
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding: 28px 0 !important;
+    margin-top: 40px !important;
+    text-align: center;
+}
+
+.all-rights p {
+    color: var(--text-muted) !important;
+    font-size: 14px !important;
+}
+
+/* ==========================================================================
+   SCROLL PERCENTAGE
+   ========================================================================== */
+
+#scroll-percentage {
+    border: 2px solid var(--gold-primary) !important;
+    box-shadow: 0 0 16px rgba(245, 158, 11, 0.4) !important;
+    background: #0b0717 !important;
+}
+
+#scroll-percentage-value {
+    color: var(--gold-light) !important;
+}
+
+/* ==========================================================================
+   POLICY PAGES (Privacy, Terms, Refund)
+   ========================================================================== */
+
+.breadcrumbs {
+    background: transparent !important;
+    padding: 40px 0 20px 0 !important;
+}
+
+.back-link {
+    color: var(--gold-light) !important;
+    background: rgba(245, 158, 11, 0.12) !important;
+    border: 1px solid rgba(245, 158, 11, 0.35) !important;
+    padding: 8px 18px !important;
+    border-radius: 30px !important;
+    font-weight: 700 !important;
+}
+
+.policy-content {
+    background: linear-gradient(155deg, rgba(22, 17, 50, 0.9) 0%, rgba(13, 10, 31, 0.96) 100%) !important;
+    border: 1.5px solid rgba(255, 215, 0, 0.22) !important;
+    border-radius: 28px !important;
+    padding: 45px !important;
+    box-shadow: 0 25px 65px rgba(0, 0, 0, 0.75) !important;
+    backdrop-filter: blur(18px) !important;
+}
+
+.policy-content .updated-on {
+    color: var(--gold-light) !important;
+    font-weight: 700 !important;
+}
+
+.policy-content h3 {
+    color: #ffffff !important;
+    font-size: 24px !important;
+    font-weight: 800 !important;
+    margin-top: 36px !important;
+    margin-bottom: 16px !important;
+    border-bottom: 1px solid rgba(245, 158, 11, 0.25);
+    padding-bottom: 8px;
+}
+
+.policy-content p, .policy-content ul li {
+    color: var(--text-silver) !important;
+}
+
+.policy-content ul li::before {
+    background-color: var(--gold-primary) !important;
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.6);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN TWEAKS
+   ========================================================================== */
+
+@media (max-width: 991px) {
+    .top-bar {
+        padding: 12px 18px !important;
+        border-radius: 24px !important;
+        flex-wrap: wrap !important;
+        justify-content: space-between !important;
+    }
+    
+    .navbar {
+        display: block !important;
+        width: 100%;
+        margin-top: 10px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    
+    .navbar::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .navbar-links {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        gap: 6px !important;
+        justify-content: flex-start !important;
+        padding-bottom: 4px !important;
+    }
+    
+    .navbar-dropdown a {
+        white-space: nowrap !important;
+        padding: 6px 14px !important;
+        font-size: 13px !important;
+    }
+    
+    .hero-text h1 {
+        font-size: 38px !important;
+    }
+    
+    .talk-jyotishi-container {
+        padding: 22px 18px !important;
+    }
+    
+    .tjc-body {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+    
+    .tjc-actions {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .tjc-btn {
+        width: 100% !important;
+        justify-content: center;
+    }
+    
+    .footer-try {
+        padding: 30px 24px !important;
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .footer-try h2 {
+        font-size: 28px !important;
+    }
+    
+    .policy-content {
+        padding: 26px 20px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-text h1 {
+        font-size: 30px !important;
+    }
+    
+    .count-style h2 {
+        font-size: 52px !important;
+    }
+    
+    .hiring-title {
+        font-size: 46px !important;
+    }
+    
+    .consult-card {
+        padding: 22px 18px !important;
+    }
+}
