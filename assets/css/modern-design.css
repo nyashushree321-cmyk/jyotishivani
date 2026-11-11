@@ -280,21 +280,49 @@ ul.shaps-img li img {
     z-index: 2;
 }
 
+/* Hero Badge - No white background, sleek Vedic gold pill */
+.hero-text span,
+.hero-text span.hero-badge,
+.hero-text span.title-animation {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin-bottom: 20px !important;
+    display: inline-block !important;
+}
+
+.hero-text span a,
+.hero-text span.hero-badge a,
 .hero-text span.title-animation a {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(245, 158, 11, 0.14) !important;
-    color: var(--gold-light) !important;
-    border: 1px solid rgba(245, 158, 11, 0.4) !important;
-    padding: 8px 24px !important;
-    border-radius: 30px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.18) 0%, rgba(217, 119, 6, 0.28) 100%) !important;
+    color: #fde047 !important;
+    border: 1.5px solid rgba(245, 158, 11, 0.5) !important;
+    padding: 9px 24px !important;
+    border-radius: 50px !important;
     font-size: 13.5px !important;
     font-weight: 700 !important;
     text-transform: uppercase !important;
-    letter-spacing: 1px !important;
-    margin-bottom: 22px !important;
-    box-shadow: 0 0 22px rgba(245, 158, 11, 0.2);
+    letter-spacing: 0.8px !important;
+    margin-bottom: 0 !important;
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.22) !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    transition: all 0.3s ease !important;
+}
+
+.hero-text span a:hover,
+.hero-text span.hero-badge a:hover {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.3) 0%, rgba(217, 119, 6, 0.45) 100%) !important;
+    border-color: #fde047 !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 28px rgba(245, 158, 11, 0.45) !important;
+    transform: translateY(-2px);
 }
 
 .hero-text h1 {
@@ -1330,99 +1358,221 @@ footer.gap {
 }
 
 /* ==========================================================================
+   MOBILE HAMBURGER MENU BUTTON
+   ========================================================================== */
+
+/* Hidden on desktop */
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: rgba(245, 158, 11, 0.12);
+    border: 1.5px solid rgba(245, 158, 11, 0.45);
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px 12px;
+    z-index: 10001;
+    transition: background 0.2s ease;
+}
+
+.mobile-menu-btn:hover {
+    background: rgba(245, 158, 11, 0.22);
+}
+
+.mobile-menu-btn span {
+    display: block;
+    width: 22px;
+    height: 2.5px;
+    background: #fde047;
+    border-radius: 3px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+}
+
+/* Animate to X when active */
+.mobile-menu-btn.active span:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
+}
+.mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.mobile-menu-btn.active span:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* ==========================================================================
    RESPONSIVE DESIGN TWEAKS
    ========================================================================== */
 
-@media (max-width: 991px) {
-    .top-bar {
-        padding: 12px 18px !important;
-        border-radius: 24px !important;
-        flex-wrap: wrap !important;
-        justify-content: space-between !important;
+/* Desktop: hide hamburger, show navbar normally */
+@media (min-width: 1200px) {
+    .mobile-menu-btn {
+        display: none !important;
     }
-    
     .navbar {
         display: block !important;
-        width: 100%;
-        margin-top: 10px;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
+        position: static !important;
     }
-    
-    .navbar::-webkit-scrollbar {
-        display: none;
+}
+
+/* Mobile/Tablet: hamburger + fullscreen overlay menu */
+@media (max-width: 1199px) {
+    /* Show hamburger button */
+    .mobile-menu-btn {
+        display: flex !important;
     }
-    
+
+    /* top-bar: logo left, hamburger right */
+    .top-bar {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        flex-wrap: nowrap !important;
+        padding: 10px 18px !important;
+        border-radius: 20px !important;
+    }
+
+    /* Hide the navbar by default on mobile */
+    .navbar {
+        display: none !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        background: rgba(10, 6, 24, 0.97) !important;
+        z-index: 10000 !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+    }
+
+    /* Show when toggled open */
+    .navbar.mobile-open {
+        display: flex !important;
+    }
+
+    /* Stack nav links vertically, centered */
     .navbar-links {
         display: flex !important;
-        flex-wrap: nowrap !important;
-        gap: 6px !important;
-        justify-content: flex-start !important;
-        padding-bottom: 4px !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 12px !important;
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 320px !important;
     }
-    
+
+    .navbar-dropdown {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    /* Each nav link: big, clear, no word breaking */
     .navbar-dropdown a {
+        display: block !important;
+        width: 100% !important;
+        font-size: 20px !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.04em !important;
         white-space: nowrap !important;
-        padding: 6px 14px !important;
-        font-size: 13px !important;
+        padding: 14px 40px !important;
+        border-radius: 50px !important;
+        background: rgba(245, 158, 11, 0.1) !important;
+        border: 1.5px solid rgba(245, 158, 11, 0.3) !important;
+        color: #fde047 !important;
+        text-decoration: none !important;
+        transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease !important;
     }
-    
+
+    .navbar-dropdown a:hover,
+    .navbar-dropdown a:focus {
+        background: rgba(245, 158, 11, 0.25) !important;
+        border-color: rgba(245, 158, 11, 0.7) !important;
+        color: #ffffff !important;
+    }
+
+    /* ---- Other responsive tweaks ---- */
     .hero-text h1 {
         font-size: 38px !important;
     }
-    
+
     .talk-jyotishi-container {
         padding: 22px 18px !important;
     }
-    
+
     .tjc-body {
         flex-direction: column;
         align-items: flex-start;
         gap: 18px;
     }
-    
+
     .tjc-actions {
         width: 100%;
         display: flex;
         flex-direction: column;
         gap: 10px;
     }
-    
+
     .tjc-btn {
         width: 100% !important;
         justify-content: center;
     }
-    
+
     .footer-try {
         padding: 30px 24px !important;
         flex-direction: column;
         gap: 20px;
         text-align: center;
     }
-    
+
     .footer-try h2 {
         font-size: 28px !important;
     }
-    
+
     .policy-content {
         padding: 26px 20px !important;
     }
 }
 
 @media (max-width: 576px) {
+    .hero-text span,
+    .hero-text span.hero-badge,
+    .hero-text span.title-animation {
+        max-width: 100% !important;
+        margin-bottom: 16px !important;
+    }
+
+    .hero-text span a,
+    .hero-text span.hero-badge a,
+    .hero-text span.title-animation a {
+        font-size: 11.5px !important;
+        padding: 8px 16px !important;
+        letter-spacing: 0.5px !important;
+        white-space: nowrap !important;
+        max-width: 100% !important;
+    }
+
     .hero-text h1 {
         font-size: 30px !important;
     }
-    
+
     .count-style h2 {
         font-size: 52px !important;
     }
-    
+
     .hiring-title {
         font-size: 46px !important;
     }
-    
+
     .consult-card {
         padding: 22px 18px !important;
     }

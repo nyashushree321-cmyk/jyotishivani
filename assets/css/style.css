@@ -541,8 +541,8 @@ li.navbar-dropdown.menu-item-children {
 }
 
 .hero-text span {
-    background-color: #fff;
-    padding: 4px 20px;
+    background-color: transparent;
+    padding: 0;
     border-radius: 50px;
     font-weight: bold;
     text-transform: uppercase;

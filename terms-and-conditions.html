@@ -51,14 +51,18 @@
               </b>
             </a>
                 </div>
-                <nav class="navbar">
+                <nav class="navbar" id="mainNavbar">
                     <ul class="navbar-links">
-                        <li class="navbar-dropdown"><a href="index.html#"> About Us</a></li>
-                        <li class="navbar-dropdown"><a href="index.html#"> Services </a></li>
-                        <li class="navbar-dropdown"><a href="index.html#"> Contact </a></li>
+                        <li class="navbar-dropdown"><a href="index.html#pricing"> Consult</a></li>
+                        <li class="navbar-dropdown"><a href="index.html#about"> Services</a></li>
+                        <li class="navbar-dropdown"><a href="index.html#contact"> Contact </a></li>
                     </ul>
                 </nav>
-                
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </header>
@@ -334,5 +338,31 @@
     <script src="assets/js/custom.js"></script>
     <script src="assets/js/sweetalert.min.js"></script>
     <script src="assets/js/contact.js"></script>
+    <script>
+    (function() {
+        var btn = document.getElementById('mobileMenuBtn');
+        var nav = document.getElementById('mainNavbar');
+        if (!btn || !nav) return;
+        btn.addEventListener('click', function() {
+            btn.classList.toggle('active');
+            nav.classList.toggle('mobile-open');
+            document.body.style.overflow = nav.classList.contains('mobile-open') ? 'hidden' : '';
+        });
+        nav.querySelectorAll('.navbar-dropdown a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                btn.classList.remove('active');
+                nav.classList.remove('mobile-open');
+                document.body.style.overflow = '';
+            });
+        });
+        nav.addEventListener('click', function(e) {
+            if (e.target === nav) {
+                btn.classList.remove('active');
+                nav.classList.remove('mobile-open');
+                document.body.style.overflow = '';
+            }
+        });
+    })();
+    </script>
   </body>
 </html>
