@@ -491,7 +491,7 @@ header {
 
 .btn::before {
     content: '';
-    background: #000;
+    background: #e5a93c;
     transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
     transform-origin: 100% 50%;
 }
@@ -631,7 +631,7 @@ form#contact-form h3 {
     font-weight: bold;
     line-height: 46px;
     padding-bottom: 6px;
-}
+} 
 
 .get-a-quote h6 {
     color: #000000;
